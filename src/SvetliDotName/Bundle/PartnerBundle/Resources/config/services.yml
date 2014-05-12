@@ -1,0 +1,2 @@
+parameters:
+    svetlidotname_partner.partner.entity.class:     SvetliDotName\Bundle\PartnerBundle\Entity\Partner

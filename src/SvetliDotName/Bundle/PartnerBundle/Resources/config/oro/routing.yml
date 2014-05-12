@@ -1,0 +1,4 @@
+svetlidotname_partner_bundle:
+    resource:   "@SvetliDotNamePartnerBundle/Controller"
+    type:       annotation
+    prefix:     /partner

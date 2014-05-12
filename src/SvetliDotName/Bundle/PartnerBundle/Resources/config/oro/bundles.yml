@@ -1,0 +1,2 @@
+bundles:
+    - { name: SvetliDotName\Bundle\PartnerBundle\SvetliDotNamePartnerBundle, priority: 20 }
