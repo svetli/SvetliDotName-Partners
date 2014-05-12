@@ -1,4 +1,0 @@
-SvetliDotName-Partners
-======================
-
-SvetliDotNamePartner
