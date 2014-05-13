@@ -1,0 +1,12 @@
+{% extends 'OroUIBundle:actions:index.html.twig' %}
+{% import 'OroUIBundle::macros.html.twig' as UI %}
+{% set pageTitle = 'svetlidotname.partner.entity_plural_label'|trans %}
+
+{% block navButtons %}
+    {% if resource_granted('svetlidotname_partner_create') %}
+        {{ UI.addButton({
+            'path': path('svetlidotname_partner_create'),
+            'entity_label': 'svetlidotname.partner.entity_label'|trans
+        }) }}
+    {% endif %}
+{% endblock %}

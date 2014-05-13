@@ -1,0 +1,107 @@
+<?php
+
+use SvetliDotName\Bundle\PartnerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+
+use BeSimple\SoapBundle\ServiceDefinition\Annotation as Soap;
+
+use OroCRM\Bundle\AccountBundle\Model\ExtendAccount;
+use OroCRM\Bundle\ContactBundle\Entity\Contact;
+
+use Oro\Bundle\AddressBundle\Entity\Address;
+use Oro\Bundle\TagBundle\Entity\Taggable;
+use Oro\Bundle\DataAuditBundle\Metadata\Annotation as Oro;
+
+use Oro\Bundle\EntityConfigBundle\Metadata\Annotation\Config;
+use Oro\Bundle\EntityConfigBundle\Metadata\Annotation\ConfigField;
+
+
+/**
+ * @ORM\Entity()
+ * @ORM\Table(
+ *      name="svetlidotname_partner",
+ *      indexes={
+ *          @ORM\Index(name="partner_name_index", columns={"name"}),
+ *          @ORM\Index(name="partner_bulstat_index", columns={"bulstat"})
+ *      }
+ * )
+ * @ORM\HasLifecycleCallbacks()
+ * @Oro\Loggable
+ * @Config(
+ *      routeName="svetlidotname_partner_index",
+ *      routeView="svetlidotname_partner_view",
+ *      defaultValues={
+ *          "entity"={
+ *              "label"="Partner",
+ *              "plural_label"="Partners",
+ *              "icon"="icon-suitcase"
+ *          },
+ *          "security"={
+ *              "type"="ACL",
+ *              "group_name"=""
+ *          },
+ *          "merge"={
+ *              "enable"=true
+ *          },
+ *          "form"={
+ *              "form_type"="svetlidotname_partner_select"
+ *          },
+ *          "dataaduit"={
+ *              "aduitable"=true
+ *          }
+ *      }
+ * )
+ */
+class Partners
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     * @Soap\ComplexType("int", nillable=true)
+     */
+    protected $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=255)
+     * @Soap\ComplexType("string")
+     * @Oro\Versioned
+     * @ConfigField(
+     *      defaultValues={
+     *          "merge"={
+     *              "display"=true
+     *          },
+     *          "dataaudit"={
+     *              "auditable"=true
+     *          }
+     *      }
+     * )
+     */
+    protected $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=50)
+     * @Soap\ComplexType("string")
+     * @Oro\Versioned
+     * @ConfigField(
+     *      defaultValues={
+     *          "merge"={
+     *              "display"=true
+     *          },
+     *          "dataaudit"={
+     *              "auditable"=true
+     *          }
+     *      }
+     * )
+     */
+    protected $bulstat;
+
+}
+

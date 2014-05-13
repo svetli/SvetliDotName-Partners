@@ -1,0 +1,7 @@
+svetlidotname:
+    partner:
+        menu:
+            partners_tab.label: Partners
+        
+        entity_label: Partner
+        entity_plural_label: Partners

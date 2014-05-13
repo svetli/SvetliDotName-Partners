@@ -1,0 +1,22 @@
+oro_menu_config:
+    items:
+        partners_tab:
+            label: 'svetlidotname.partner.menu.partners_tab.label'
+            uri: '#'
+            extras:
+                position: 10
+
+        partners_list:
+            label: 'svetlidotname.partner.entity_plural_label'
+            route: 'svetlidotname_partner_index'
+            extras:
+                position: 5
+                routes: ['svetlidotname_account_*']
+                description: 'svetlidotname.partner.menu.partners_list.description'
+
+    tree:
+        application_menu:
+            children:
+                partners_tab:
+                    children:
+                        partners_list: ~

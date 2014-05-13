@@ -23,6 +23,7 @@ class PartnerController extends Controller
      *      defaults={
      *          "_format"="html"
      *      }
+     * )
      * @AclAncestor("svetlidotname_partner_view")
      * @Template()
      */

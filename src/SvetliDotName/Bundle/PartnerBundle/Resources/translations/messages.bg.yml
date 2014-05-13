@@ -1,0 +1,7 @@
+svetlidotname:
+    partner:
+        menu:
+            partners_tab.label: Партньори
+
+        entity_label: Партньор
+        entity_plural_label: Списък
